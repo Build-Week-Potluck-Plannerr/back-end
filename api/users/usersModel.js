@@ -8,7 +8,7 @@ function find() {
 }
 
 /**
- *
+ * selects users by passing an attribute such as username
  * @param {*} filter
  * @return {object} user
  */
@@ -17,7 +17,7 @@ function findBy(filter) {
 }
 
 /**
- *
+ * selects a user based on their id
  * @param {number} id
  * @return {object} user
  */
@@ -28,7 +28,8 @@ function findById(id) {
 }
 
 /**
- *
+ * creates a new user,
+ * if no role is given they will be added as guest
  * @param {*} user
  * @return {object} user
  */
