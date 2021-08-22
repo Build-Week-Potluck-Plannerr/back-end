@@ -9,11 +9,11 @@ function find() {
 
 /**
  * selects users by passing an attribute such as username
- * @param {*} filter
+ * @param {*} search
  * @return {object} user
  */
-function findBy(filter) {
-  return db('users').where(filter);
+function findBy(search) {
+  return db('users').where('username', search);
 }
 
 /**
@@ -25,7 +25,7 @@ function findById(id) {
   return db('users')
       .where('id', id)
       .first();
-}
+} // is this redundant?
 
 /**
  * creates a new user,
@@ -35,7 +35,7 @@ function findById(id) {
  */
 async function add(user) {
   const [id] = await db('users').insert(user);
-  return findById(id);
+  return findBy(id);
 }
 
 module.exports = {

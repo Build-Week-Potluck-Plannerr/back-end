@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router(); // eslint-disable-line
 const Users = require('./usersModel');
-const {checkUserData} = require('./usersMiddleware');
+const {checkUserData, checkSearchUsername} = require('./usersMiddleware');
 
 /**
  * user router should be used by anyone
@@ -19,13 +19,14 @@ router.get('/',
 /**
  * only be used by the host to
  * organize the event and the route should
- * get /:filter should
+ * get /:filter (such as username.) should
  * be restricted to only hosts.
  * @return {object} user
  */
-router.get('/:filter',
+router.post('/:username',
+    checkSearchUsername,
     (req, res)=>{
-
+      res.json(req.body);
     });
 
 module.exports = router;
