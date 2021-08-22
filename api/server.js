@@ -20,8 +20,5 @@ server.use(function( err, req, res, next) {
   });
 });
 
-server.listen(PORT, ()=>{
-  console.log(`listening on ${PORT}`);
-});
 module.exports = server;
 
