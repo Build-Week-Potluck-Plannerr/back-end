@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router(); // eslint-disable-line
-const Users = require('./usersModel');
 const {checkUserData, checkSearchUsername} = require('./usersMiddleware');
 
 /**
