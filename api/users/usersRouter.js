@@ -23,7 +23,7 @@ router.get('/',
  * be restricted to only hosts.
  * @return {object} user
  */
-router.post('/:username',
+router.post('/search',
     checkSearchUsername,
     (req, res)=>{
       res.json(req.body);

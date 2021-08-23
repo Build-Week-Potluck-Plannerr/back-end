@@ -13,7 +13,7 @@ function find() {
  * @return {object} user
  */
 function findBy(search) {
-  return db('users').where('username', search);
+  return db('users').where(search);
 }
 
 /**
