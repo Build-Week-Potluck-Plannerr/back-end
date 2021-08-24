@@ -1,12 +1,14 @@
 const express = require('express');
 const {validatePayload} = require('./authModel');
-const {userSchema} = require('../schemas/schemas');
+const {userSchemaRegister,
+  userSchemaLogin} = require('../schemas/schemas');
 const router = express.Router(); // eslint-disable-line
 const bcrypt = require('bcryptjs');
 const Users = require('../users/usersModel');
 
+
 router.post('/register',
-    validatePayload(userSchema),
+    validatePayload(userSchemaRegister),
     async (req, res, next)=> {
       try {
         const {username, password, name} = req.body;
@@ -19,9 +21,11 @@ router.post('/register',
       }
     });
 
-router.post('/login', (req, res, next)=>{
-  res.json({message: 'login here!'});
-});
+router.post('/login',
+    validatePayload(userSchemaLogin),
+    (req, res, next)=>{
+      res.json({message: 'login here!'});
+    });
 
 router.get('/logout', (req, res, next)=>{
   res.json({message: 'logout here!'});
