@@ -34,8 +34,9 @@ function findById(id) {
  * @return {object} user
  */
 async function add(user) {
-  const [id] = await db('users').insert(user);
-  return findBy(id);
+  const [newUser] = await db('users')
+      .insert(user);
+  return await findById(newUser);
 }
 
 module.exports = {
