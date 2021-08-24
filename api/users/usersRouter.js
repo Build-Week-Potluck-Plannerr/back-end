@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router(); // eslint-disable-line
 const {checkUserData, checkSearchUsername} = require('./usersMiddleware');
-
+const {restricted} = require('../auth/authMiddleware');
 /**
  * user router should be used by anyone
  * that needs to who is attending, and
@@ -10,6 +10,7 @@ const {checkUserData, checkSearchUsername} = require('./usersMiddleware');
  */
 router.get('/',
     checkUserData,
+    restricted,
     async (req, res)=>{
       res.json(req.body);
     });

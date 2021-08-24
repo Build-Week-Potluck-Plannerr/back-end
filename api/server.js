@@ -19,8 +19,9 @@ server.get('/', (req, res)=>{
 
 server.use(function( err, req, res, next) {
   res.status(err.status || 500 ).json({
+    validationErrors: err.errors,
     message: 'something is wrong',
-    customeMessage: err.message,
+    customMessage: err.message,
     stack: err.stack,
   });
 });

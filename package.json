@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "jest --watch --verbose",
     "migrate-new": "knex migrate:make users",
     "migrate-update": "knex migrate:make users-schema-update",
@@ -34,7 +35,8 @@
     "knex": "^0.95.10",
     "nodemon": "^2.0.12",
     "sqlite3": "^5.0.2",
-    "supertest": "^6.1.6"
+    "supertest": "^6.1.6",
+    "yup": "^0.32.9"
   },
   "jest": {
     "testEnvironment": "node"
