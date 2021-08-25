@@ -1,5 +1,6 @@
 const express = require('express');
-const {validatePayload} = require('./authModel');
+const {validatePayload,
+  validateCredentials} = require('./authMiddleware');
 const {userSchemaRegister,
   userSchemaLogin} = require('../schemas/schemas');
 const router = express.Router(); // eslint-disable-line
@@ -23,8 +24,9 @@ router.post('/register',
 
 router.post('/login',
     validatePayload(userSchemaLogin),
+    validateCredentials(),
     (req, res, next)=>{
-      res.json({message: 'login here!'});
+
     });
 
 router.get('/logout', (req, res, next)=>{
