@@ -7,7 +7,6 @@ const router = express.Router(); // eslint-disable-line
 const bcrypt = require('bcryptjs');
 const Users = require('../users/usersModel');
 
-
 router.post('/register',
     validatePayload(userSchemaRegister),
     async (req, res, next)=> {
@@ -24,13 +23,19 @@ router.post('/register',
 
 router.post('/login',
     validatePayload(userSchemaLogin),
-    validateCredentials(),
+    validateCredentials,
     (req, res, next)=>{
-
+      res.json(req.body);
+      next();
     });
 
 router.get('/logout', (req, res, next)=>{
-  res.json({message: 'logout here!'});
+  if (req.session.user) {
+    req.session.destroy((err) =>
+      res.redirect('/'));
+  } else {
+    res.json({message: 'No session to logout of!'});
+  }
 });
 
 module.exports = router;

@@ -1,10 +1,26 @@
 const express = require('express');
 const server = express();
 const PORT = process.env.PORT || 8000;
+const {v4: uuid} = require('uuid');
 const authRouter = require('./auth/authRouter');
 const userRouter = require('./users/usersRouter');
 const helmet = require('helmet');
 const cors = require('cors');
+const session = require('express-session');
+
+
+server.use(session({
+  name: uuid(),
+  secret: [uuid(), uuid(), uuid()],
+  cookie: {
+    maxAge: 1000 * 60 * 30,
+    secure: false,
+    httpOnly: false,
+  },
+  rolling: true,
+  resave: false,
+  saveUninitialized: false,
+}));
 server.use(express.json());
 server.use(helmet());
 server.use(cors());
