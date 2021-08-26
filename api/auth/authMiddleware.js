@@ -46,10 +46,10 @@ const validatePayload = (schema) => async (req, res, next) => {
 const validateCredentials = async (req, res, next) => {
   try {
     const {username, password} = req.body;
-    const token = createToken(user);
-
     const [user] = await Users.findBy({username});
     const passwordCheck = bcrypt.compareSync(password, user.password);
+    const token = createToken(user);
+
 
 
     if (user && passwordCheck) {
