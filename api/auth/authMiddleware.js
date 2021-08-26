@@ -1,5 +1,7 @@
 const bcrypt = require('bcryptjs');
 const Users = require('../users/usersModel');
+const {createToken} = require('../createToken');
+
 /**
  * restricts routes to specific users with authorization,
  * todo: session v cookie.
@@ -44,16 +46,22 @@ const validatePayload = (schema) => async (req, res, next) => {
 const validateCredentials = async (req, res, next) => {
   try {
     const {username, password} = req.body;
+    // const token = createToken(user);
 
     const [user] = await Users.findBy({username});
     const passwordCheck = bcrypt.compareSync(password, user.password);
-    // why false!?
+
 
     if (user && passwordCheck) {
       console.log(user);
       console.log(req.session);
       req.session.user = user;
-      res.json({message: 'Welcome to your experience!'});
+      res.json({
+        message: 'Welcome to your experience!',
+        // TODO:
+        // create accept/deny alert re:cookies redirect -> JWT
+        // token,
+      });
       next();
     } else {
       console.log(user);

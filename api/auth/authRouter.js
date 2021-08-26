@@ -6,6 +6,7 @@ const {userSchemaRegister,
 const router = express.Router(); // eslint-disable-line
 const bcrypt = require('bcryptjs');
 const Users = require('../users/usersModel');
+const {createToken} = require('../createToken');
 
 router.post('/register',
     validatePayload(userSchemaRegister),
@@ -31,11 +32,18 @@ router.post('/login',
 
 router.get('/logout', (req, res, next)=>{
   if (req.session.user) {
-    req.session.destroy((err) =>
-      res.redirect('/'));
+    req.session.destroy((err) => {
+      if (err) {
+        res.json({message: 'error logging out'});
+      } else {
+        res.redirect('/');
+      }
+    },
+    );
   } else {
     res.json({message: 'No session to logout of!'});
   }
 });
+
 
 module.exports = router;

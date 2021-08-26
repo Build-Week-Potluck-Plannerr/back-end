@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "server": "nodemon index.js",
     "start": "node index.js",
     "test": "jest --watch --verbose",
     "migrate-new": "knex migrate:make users",
@@ -32,6 +33,7 @@
     "express-session": "^1.17.2",
     "helmet": "^4.6.0",
     "jest": "^27.0.6",
+    "jsonwebtoken": "^8.5.1",
     "knex": "^0.95.10",
     "nodemon": "^2.0.12",
     "sqlite3": "^5.0.2",
