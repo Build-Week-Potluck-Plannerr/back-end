@@ -67,7 +67,10 @@ const validateCredentials = async (req, res, next) => {
       console.log(req.session);
       req.session.user = user;
       res.json({
-        message: 'Welcome to your experience!',
+        user: {
+          name: user.name,
+          username: user.username,
+        },
         token,
         // TODO:
         // create accept/deny alert re:cookies redirect -> JWT
