@@ -46,7 +46,7 @@ const validatePayload = (schema) => async (req, res, next) => {
 const validateCredentials = async (req, res, next) => {
   try {
     const {username, password} = req.body;
-    // const token = createToken(user);
+    const token = createToken(user);
 
     const [user] = await Users.findBy({username});
     const passwordCheck = bcrypt.compareSync(password, user.password);
@@ -58,6 +58,7 @@ const validateCredentials = async (req, res, next) => {
       req.session.user = user;
       res.json({
         message: 'Welcome to your experience!',
+        token,
         // TODO:
         // create accept/deny alert re:cookies redirect -> JWT
         // token,
