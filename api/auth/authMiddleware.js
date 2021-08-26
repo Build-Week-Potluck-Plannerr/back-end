@@ -55,7 +55,7 @@ const validateCredentials = async (req, res, next) => {
       };
       const secret = process.env.JWT_SECRET || uuid();
       const options = {
-        expires: Math.floor(Date.now() / 1000) + (60 * 60),
+        expiresIn: Math.floor(Date.now() / 1000) + (60 * 60),
       };
       return jwt.sign(payload, secret, options);
     };
