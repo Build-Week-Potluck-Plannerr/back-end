@@ -17,7 +17,6 @@ https://mysterious-river-93270.herokuapp.com
 
 :octocat:
 
-# POST 
 
 ## /api/auth/login
 
@@ -41,7 +40,6 @@ https://mysterious-river-93270.herokuapp.com
 
 :octocat:
 
-# GET 
 
 ## /api/auth/logout
 
