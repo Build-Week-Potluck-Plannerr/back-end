@@ -25,7 +25,6 @@ https://mysterious-river-93270.herokuapp.com
 > {
 >
 >     "username" :  [string],
->     "name" : [string],
 >     "password" : [string],
 > }
 
