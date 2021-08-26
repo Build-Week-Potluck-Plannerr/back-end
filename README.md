@@ -47,6 +47,16 @@ https://mysterious-river-93270.herokuapp.com
 
 *no body required*
 
+
 :octocat: :octocat: :octocat:
 
+:boom: :boom: :boom:
+
 TODO:
+ * PUT update user information
+ * DELETE update user information
+ * POST Food tables { name: '', pictureSrc: '' }
+ * PUT Food tables { name: '', pictureSrc: '' }
+ * POST event {attending: [array], foods: [array], date: [date], location: [string] }
+ * DELETE event [id]
+ * PUT update event {attending: [array], foods: [array], date: [date], location: [string] }
