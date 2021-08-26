@@ -1,0 +1,85 @@
+commit bf9349a23a52fcdefec9951e514d36d80b9bd1d5
+Author: Rocky Fierro <39335873+rockyFierro@users.noreply.github.com>
+Date:   Mon Aug 23 16:53:41 2021 -0700
+
+    :art: auth endpoints being added
+    
+    authRouter '/api/auth' added to the server, currently filling out.
+
+commit 9b2687213f9430c3c1f7fdc5986d09272f1bd663
+Author: Rocky Fierro <39335873+rockyFierro@users.noreply.github.com>
+Date:   Sun Aug 22 20:17:53 2021 -0700
+
+    :construction: models
+    
+    findBy is ready
+
+commit a9d4f8f8a96d08fa942dbecbdbbc51f3338b3f58
+Author: Rocky Fierro <39335873+rockyFierro@users.noreply.github.com>
+Date:   Sun Aug 22 15:46:14 2021 -0700
+
+    :construction: sleeeeep eludes me
+    
+    finished a rudementary findByUsername() middlware. need sleep. working again at 7.
+
+commit 54205b95af0ed275311b3fc1ebbc4600ae9ab5b6
+Author: Rocky Fierro <39335873+rockyFierro@users.noreply.github.com>
+Date:   Sat Aug 21 21:50:23 2021 -0700
+
+    :construction: testing / routing / middleware
+    
+    the workflow is quick and i keep forgetting to branch and merge, more routes tomorrow
+
+commit f0063cd8492343466d2e0921c47bf8899199da7d
+Author: Rocky Fierro <39335873+rockyFierro@users.noreply.github.com>
+Date:   Sat Aug 21 10:00:49 2021 -0700
+
+    :construction: users endpoint
+    
+    returning all users, needs testing on findyBy(),add(), findById() models
+
+commit 4873b7b502957a796f0d94b93aa3544100b4e868
+Author: Rocky Fierro <39335873+rockyFierro@users.noreply.github.com>
+Date:   Fri Aug 20 22:31:18 2021 -0700
+
+    :card_file_box: user model
+    
+    created user models (untested)
+
+commit f99a9d77d937206d0b02b694c2e5024088fe21ff
+Author: Rocky Fierro <39335873+rockyFierro@users.noreply.github.com>
+Date:   Fri Aug 20 21:59:34 2021 -0700
+
+    :seedling: seeds
+    
+    seeds finished, database populated with users and a host.
+
+commit d7282e6d9a5bd1024bf5874e3eae0cec3c64abb9
+Author: Rocky Fierro <39335873+rockyFierro@users.noreply.github.com>
+Date:   Fri Aug 20 21:36:44 2021 -0700
+
+    :seedling: 001-users
+    
+    initialized a seed, continuing to work on guests and host
+
+commit 1fc40aac339e5cdf53c5c107e60a4565ba16f824
+Author: Rocky Fierro <39335873+rockyFierro@users.noreply.github.com>
+Date:   Fri Aug 20 21:35:37 2021 -0700
+
+    :card_file_box: users database
+    
+    migrations added, scripts added to package.json
+
+commit a7a8ecfb2be7d465eb12d9042923b0bc98c20b71
+Author: Rocky Fierro <39335873+rockyFierro@users.noreply.github.com>
+Date:   Thu Aug 19 20:48:12 2021 -0700
+
+    :tada: Tests
+    
+    start writing supertest
+
+commit 64f388a9ccb80701aa176809d46d46527ecbf855
+Author: Mike Lovelace <54528952+mikelovelace@users.noreply.github.com>
+Date:   Wed Aug 18 22:14:57 2021 -0400
+
+    Initial commit
