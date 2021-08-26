@@ -1,7 +1,7 @@
 const bcrypt = require('bcryptjs');
 const Users = require('../users/usersModel');
-const {createToken} = require('../createToken');
-
+const jwt = require('jsonwebtoken');
+const {v4: uuid} = require('uuid');
 /**
  * restricts routes to specific users with authorization,
  * todo: session v cookie.
@@ -48,8 +48,18 @@ const validateCredentials = async (req, res, next) => {
     const {username, password} = req.body;
     const [user] = await Users.findBy({username});
     const passwordCheck = bcrypt.compareSync(password, user.password);
-    const token = createToken(user);
 
+    const createToken = (user) =>{
+      const payload = {
+        subject: user.id,
+      };
+      const secret = process.env.JWT_SECRET || uuid();
+      const options = {
+        expires: Math.floor(Date.now() / 1000) + (60 * 60),
+      };
+      return jwt.sign(payload, secret, options);
+    };
+    const token = createToken(user);
 
 
     if (user && passwordCheck) {
