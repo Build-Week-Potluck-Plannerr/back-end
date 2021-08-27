@@ -16,7 +16,7 @@ const restricted = (req, res, next) => {
   if (!token) {
     return next({status: 401, message: 'Token is required'});
   }
-  jwt.verify(token, process.env.JWT_SECRET , (err, decodedToken) =>{
+  jwt.verify(token, process.env.JWT_SECRET, (err, decodedToken) =>{
     if (err) {
       next({status: 401, message: 'forgery detected'});
     } else {
@@ -46,8 +46,8 @@ const validatePayload = (schema) => async (req, res, next) => {
   try {
     await schema.validate(body, {abortEarly: false});
     next();
-  } catch ( error) {
-    next(error);
+  } catch ( err) {
+    next(err);
   }
 };
 
@@ -81,7 +81,7 @@ const validateCredentials = async (req, res, next) => {
       console.log(user);
       console.log(req.session);
       req.session.user = user;
-      res.json({
+      req.body = {
         user: {
           name: user.name,
           username: user.username,
@@ -92,7 +92,7 @@ const validateCredentials = async (req, res, next) => {
         // TODO:
         // create accept/deny alert re:cookies redirect -> JWT
         // token,
-      });
+      };
       next();
     } else {
       console.log(user);

@@ -1,3 +1,19 @@
+commit ac20e0947ce41f85251edb3a30073ea30b1df4ea
+Author: Rocky Fierro <39335873+rockyFierro@users.noreply.github.com>
+Date:   Fri Aug 27 12:58:31 2021 -0700
+
+    :memo: EDIT DELETE added
+    
+    instructions on using edit and delete have been added
+
+commit f732c5437373b803b0646ff3a15802c80034a2c6
+Author: Rocky Fierro <39335873+rockyFierro@users.noreply.github.com>
+Date:   Fri Aug 27 12:47:55 2021 -0700
+
+    :passport_control: jwt polished
+    
+    added new ways to get rejected.
+
 commit 53f07cc7dccc8e75ff427dd5035b144b72bc27da
 Author: Rocky Fierro <39335873+rockyFierro@users.noreply.github.com>
 Date:   Fri Aug 27 00:41:15 2021 -0700
