@@ -37,7 +37,7 @@ router.put('/edit/:id',
     async (req, res)=>{
       try {
         const userInfo = await Users.updateById(req.params.id, req.body);
-        console.log(userInfo);
+        res.json(userInfo);
       } catch {
         res.status(500).json({
           message: 'user account is unable to be updated.',
@@ -45,4 +45,18 @@ router.put('/edit/:id',
       }
     },
 );
+
+router.delete('/delete/:id',
+    checkId,
+    async (req, res)=>{
+      try {
+        const deleted = await Users.deleteById(req.params.id);
+        res.json({message: 'user account deleted', deleted});
+      } catch {
+        res.status(500).json({
+          message:
+          'unable to remove user account please contact your administrator'});
+      }
+    });
+
 module.exports = router;

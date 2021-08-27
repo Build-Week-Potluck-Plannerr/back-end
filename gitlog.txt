@@ -1,3 +1,11 @@
+commit 53f07cc7dccc8e75ff427dd5035b144b72bc27da
+Author: Rocky Fierro <39335873+rockyFierro@users.noreply.github.com>
+Date:   Fri Aug 27 00:41:15 2021 -0700
+
+    :card_file_box: new endpoint /edit/:id
+    
+    new data coming back from login for front end state management
+
 commit 7a2416fda40d318e3e08c445b9fbd5ef734be50d
 Author: Rocky Fierro <39335873+rockyFierro@users.noreply.github.com>
 Date:   Thu Aug 26 14:15:47 2021 -0700

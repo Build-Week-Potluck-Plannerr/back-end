@@ -1,15 +1,30 @@
 const bcrypt = require('bcryptjs');
 const Users = require('../users/usersModel');
 const jwt = require('jsonwebtoken');
-const {v4: uuid} = require('uuid');
+
 /**
  * restricts routes to specific users with authorization,
  * todo: session v cookie.
  * @param {*} req
  * @param {*} res
  * @param {*} next
+ * @return {*} error
  */
 const restricted = (req, res, next) => {
+  const token = req.headers.authorization;
+
+  if (!token) {
+    return next({status: 401, message: 'Token is required'});
+  }
+  jwt.verify(token, process.env.JWT_SECRET , (err, decodedToken) =>{
+    if (err) {
+      next({status: 401, message: 'forgery detected'});
+    } else {
+      req.decodedToken = decodedToken;
+      next();
+    }
+  });
+
   if (req.session.user) {
     next();
   } else {
@@ -53,7 +68,7 @@ const validateCredentials = async (req, res, next) => {
       const payload = {
         subject: user.id,
       };
-      const secret = process.env.JWT_SECRET || uuid();
+      const secret = process.env.JWT_SECRET;
       const options = {
         expiresIn: Math.floor(Date.now() / 1000) + (60 * 60),
       };
@@ -71,7 +86,7 @@ const validateCredentials = async (req, res, next) => {
           name: user.name,
           username: user.username,
           id: user.id,
-          email: user.email
+          email: user.email,
         },
         token,
         // TODO:

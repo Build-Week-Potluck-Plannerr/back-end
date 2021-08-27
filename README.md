@@ -39,6 +39,23 @@ https://mysterious-river-93270.herokuapp.com
 
 :octocat:
 
+# PUT
+
+## /api/users/edit/:id
+
+  *not all arguments are required, only those you wish to update*
+> {
+>
+>     "username" :  [string],
+>     "name" : [string],
+>     "password" : [string],
+>     "email": [string]
+> }
+
+
+:octocat:
+
+
 
 ## /api/auth/logout
 
