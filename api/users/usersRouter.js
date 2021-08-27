@@ -1,7 +1,10 @@
 const express = require('express');
 const router = express.Router(); // eslint-disable-line
-const {checkUserData, checkSearchUsername} = require('./usersMiddleware');
+const {checkUserData,
+  checkSearchUsername,
+  checkId} = require('./usersMiddleware');
 const {restricted} = require('../auth/authMiddleware');
+const Users = require('./usersModel');
 /**
  * user router should be used by anyone
  * that needs to who is attending, and
@@ -29,4 +32,17 @@ router.post('/search',
       res.json(req.body);
     });
 
+router.put('/edit/:id',
+    checkId,
+    async (req, res)=>{
+      try {
+        const userInfo = await Users.updateById(req.params.id, req.body);
+        console.log(userInfo);
+      } catch {
+        res.status(500).json({
+          message: 'user account is unable to be updated.',
+        });
+      }
+    },
+);
 module.exports = router;

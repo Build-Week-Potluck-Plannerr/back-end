@@ -8,7 +8,8 @@ function find() {
 }
 
 /**
- * selects users by passing an attribute such as username
+ * selects users by passing an attribute such as username, dish or name
+ *
  * @param {*} search
  * @return {object} user
  */
@@ -39,9 +40,33 @@ async function add(user) {
   return await findById(newUser);
 }
 
+/**
+ *  finds user to update and
+ * replaces old information with new
+ * @param {*} id
+ * @param {*} account
+ * @return {*} updated user
+ */
+const updateById = async (id, account) => {
+  await db('users').where('id', id).update(account);
+  return findById(id);
+};
+
+/**
+ * takes id and deletes corrosponding user account
+ * @param {*} id
+ * @return {*} deleted user
+ */
+const deleteById = async (id) => {
+  await db('users').where('id', id).del();
+  return findById(id);
+};
+
 module.exports = {
   find,
   findBy,
   findById,
   add,
+  updateById,
+  deleteById,
 };

@@ -70,6 +70,8 @@ const validateCredentials = async (req, res, next) => {
         user: {
           name: user.name,
           username: user.username,
+          id: user.id,
+          email: user.email
         },
         token,
         // TODO:

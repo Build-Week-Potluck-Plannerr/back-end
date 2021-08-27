@@ -11,7 +11,7 @@ exports.seed = function(knex) {
             'password':
                  '$2a$12$8PjGtgU5nhOH67SQEmg75.ol4t81tXs.mSN0J0FbsEKCf95sQW8UO',
             'potluck_id': null,
-            'role': 'guest',
+            'role': 'role',
             'username': 'velma',
           },
           {
