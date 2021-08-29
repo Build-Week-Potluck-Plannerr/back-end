@@ -1,5 +1,5 @@
 const db = require('../../data/db-configure');
-const subj = subj;
+const subj = 'potlucks';
 
 /** selects allsubj
 * @return {array} users
