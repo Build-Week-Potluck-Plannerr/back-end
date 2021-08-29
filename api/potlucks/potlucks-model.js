@@ -25,20 +25,20 @@ function findBy(search) {
  */
 function findById(id) {
   return db(subj)
-      .where('id', id)
+      .where('potluck_id', id)
       .first();
 } // is this redundant?
 
 /**
  * creates a new user,
  * if no role is given they will be added as guest
- * @param {*} user
+ * @param {*} potluck
  * @return {object} user
  */
-async function add(user) {
-  const [newUser] = await db(subj)
-      .insert(user);
-  return await findById(newUser);
+async function add(potluck) {
+  const [newPotluck] = await db(subj)
+      .insert(potluck);
+  return await findById(newPotluck);
 }
 
 /**

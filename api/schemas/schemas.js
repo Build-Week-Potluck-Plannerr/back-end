@@ -25,7 +25,15 @@ const userSchemaLogin = yup.object({
       .max(20, 'password: no more than 20 characters please')
       .required('password: password is required'),
 });
+
+const potlucksSchemaNew = yup.object({
+  potluck_name: yup.string().required(),
+  location: yup.string().required(),
+  date: yup.string().required(),
+});
+
 module.exports = {
   userSchemaRegister,
   userSchemaLogin,
+  potlucksSchemaNew,
 };

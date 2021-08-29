@@ -10,7 +10,7 @@ const checkUserData = async ( req, res, next ) => {
   try {
     const users = await Users.find();
     if ( !users || users.length === 0 ) {
-      res.json({message: 'no users in database', users});
+      next({message: 'no users in database'});
     } else {
       req.body = users;
       next();
