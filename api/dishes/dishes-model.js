@@ -1,21 +1,20 @@
 const db = require('../../data/db-configure');
-const subj = 'users';
-
-/** selects allsubj
-* @return {array} users
+const subj = 'dishes'
+/** selects all users
+ * @return {array} users
 */
 function find() {
-  return db(subj);
+  return db('users');
 }
 
 /**
- * selectssubjby passing an attribute such as username, dish or name
+ * selects users by passing an attribute such as username, dish or name
  *
  * @param {*} search
  * @return {object} user
  */
 function findBy(search) {
-  return db(subj).where(search);
+  return db('users').where(search);
 }
 
 /**
@@ -24,7 +23,7 @@ function findBy(search) {
  * @return {object} user
  */
 function findById(id) {
-  return db(subj)
+  return db('users')
       .where('id', id)
       .first();
 } // is this redundant?
@@ -36,7 +35,7 @@ function findById(id) {
  * @return {object} user
  */
 async function add(user) {
-  const [newUser] = await db(subj)
+  const [newUser] = await db('users')
       .insert(user);
   return await findById(newUser);
 }
@@ -49,7 +48,7 @@ async function add(user) {
  * @return {*} updated user
  */
 const updateById = async (id, account) => {
-  await db(subj).where('id', id).update(account);
+  await db('users').where('id', id).update(account);
   return findById(id);
 };
 
@@ -59,7 +58,7 @@ const updateById = async (id, account) => {
  * @return {*} deleted user
  */
 const deleteById = async (id) => {
-  await db(subj).where('id', id).del();
+  await db('users').where('id', id).del();
   return findById(id);
 };
 
