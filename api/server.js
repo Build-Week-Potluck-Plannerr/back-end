@@ -8,6 +8,7 @@ const helmet = require('helmet');
 const cors = require('cors');
 const session = require('express-session');
 const potlucksRouter = require('./potlucks/potlucks-router');
+const dishesRouter = require('./dishes/dishes-router');
 
 server.use(session({
   name: uuid(),
@@ -28,7 +29,7 @@ server.use(cors());
 server.use('/api/auth', authRouter );
 server.use('/api/users', userRouter);
 server.use('/api/potlucks', potlucksRouter);
-
+server.use('/api/dishes', dishesRouter);
 
 server.get('/', (req, res)=>{
   res.status(200).json({api: 'running'});

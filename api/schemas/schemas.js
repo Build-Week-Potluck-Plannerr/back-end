@@ -32,8 +32,15 @@ const potlucksSchemaNew = yup.object({
   date: yup.string().required(),
 });
 
+const dishesSchema = yup.object({
+  'dish_name': yup.string().required(),
+  'eaches': yup.number().required(),
+  'image source': yup.string(),
+});
+
 module.exports = {
   userSchemaRegister,
   userSchemaLogin,
   potlucksSchemaNew,
+  dishesSchema,
 };

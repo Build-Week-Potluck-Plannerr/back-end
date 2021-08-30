@@ -29,6 +29,18 @@ https://mysterious-river-93270.herokuapp.com
 > }
 
 :octocat:
+## /api/dishes/new
+
+*body required*
+
+> {
+>
+>     "dish_name" :  [string],
+>     "eaches" : [number],
+>     "image source" : [string],
+> }
+
+:octocat:
 ## /api/auth/login
 
 *body required*
@@ -56,6 +68,12 @@ https://mysterious-river-93270.herokuapp.com
 
 
 :octocat:
+## /api/dishes
+
+*no body required*
+
+
+:octocat:
 # PUT
 
 ## /api/potlucks/update/:id
@@ -71,14 +89,25 @@ https://mysterious-river-93270.herokuapp.com
 
 :octocat:
 
-## /api/potlucks/edit/:id
+## /api/users/update/:id
 
   *not all arguments are required, only those you wish to update*
 > {
 >
->     "potluck_name" :  [string],
->     "location" : [string],
->     "date" : [string]
+>     "username" :  [string],
+>     "password" : [string],
+>     "name" : [string],
+>     "email" : [string]
+> }
+
+## /api/dishes/update/:id
+
+  *not all arguments are required, only those you wish to update*
+> {
+>
+>     "dish_name" :  [string],
+>     "eaches" : [number],
+>     "image source" : [string]
 > }
 
 
@@ -98,6 +127,12 @@ https://mysterious-river-93270.herokuapp.com
 :octocat:
 
 ## /api/auth/logout
+
+*no body required*
+
+:octocat:
+
+## /api/dishes/delete/:id
 
 *no body required*
 

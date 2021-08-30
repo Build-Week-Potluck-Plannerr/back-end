@@ -8,6 +8,6 @@ exports.up = function(knex) {
 
 exports.down = function(knex) {
   return knex.schema.table('users', (table) =>{
-    table.dropColumn('email').notNullable().default('please add e-mail');
+    table.dropColumn('email');
   });
 };

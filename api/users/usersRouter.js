@@ -32,7 +32,7 @@ router.post('/search',
       res.json(req.body);
     });
 
-router.put('/edit/:id',
+router.put('/update/:id',
     checkId,
     async (req, res)=>{
       try {
