@@ -48,8 +48,8 @@ async function add(potluck) {
  * @param {*} account
  * @return {*} updated user
  */
-const updateById = async (id, account) => {
-  await db(subj).where('id', id).update(account);
+const updateById = async (id, potluck) => {
+  await db(subj).where('potluck_id', id).update(potluck);
   return findById(id);
 };
 
@@ -59,7 +59,7 @@ const updateById = async (id, account) => {
  * @return {*} deleted user
  */
 const deleteById = async (id) => {
-  await db(subj).where('id', id).del();
+  await db(subj).where('potluck_id', id).del();
   return findById(id);
 };
 

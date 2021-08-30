@@ -21,5 +21,20 @@ async function checkPotluckData(req, res, next) {
   }
 }
 
+/**
+ * verifies that the potluck is in the database via [id]
+ * @param {*} req
+ * @param {*} res
+ * @param {*} next
+ */
+const checkPotluckId = async (req, res, next) => {
+  const potluck = await Potlucks.findById(req.params.id);
+  if (!potluck) {
+    res.status(404).json({message: 'potluck event not found'});
+  } else {
+    next();
+  }
+};
 
-module.exports = {checkPotluckData};
+module.exports = {checkPotluckData,
+  checkPotluckId};

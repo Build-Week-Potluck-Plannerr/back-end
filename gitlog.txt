@@ -1,3 +1,35 @@
+commit 820ab928c51036aca18b712c2ecbfab39523e700
+Author: Rocky Fierro <39335873+rockyFierro@users.noreply.github.com>
+Date:   Sun Aug 29 13:28:05 2021 -0700
+
+    :construction: potluck endpoints
+    
+    adding a potluck to the db is available
+
+commit 4d61fb58b39d87680a763c92d66624cbcfc58336
+Author: Rocky Fierro <39335873+rockyFierro@users.noreply.github.com>
+Date:   Sun Aug 29 10:46:42 2021 -0700
+
+    :building_construction: new endpoints
+    
+    GET potlucks is now available.
+
+commit 3ca26251e02eedabdaf8f799e1010a5e4a891e88
+Author: Rocky Fierro <39335873+rockyFierro@users.noreply.github.com>
+Date:   Sun Aug 29 10:18:17 2021 -0700
+
+    :goal_net: minor adjustments to error read out
+    
+    alerts changed for readability
+
+commit 1a65bec85d454908490ad38f95aa8028e8a6b5c4
+Author: Rocky Fierro <39335873+rockyFierro@users.noreply.github.com>
+Date:   Fri Aug 27 13:19:44 2021 -0700
+
+    :card_file_box: bughunt
+    
+    error returning two responses in the same code. solution: next(obj) > req.body
+
 commit ac20e0947ce41f85251edb3a30073ea30b1df4ea
 Author: Rocky Fierro <39335873+rockyFierro@users.noreply.github.com>
 Date:   Fri Aug 27 12:58:31 2021 -0700
