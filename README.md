@@ -17,7 +17,30 @@ https://mysterious-river-93270.herokuapp.com
 
 :octocat:
 
+## /api/potlucks/new
 
+*body required*
+
+> {
+>
+>     "potluck_name" :  [string],
+>     "location" : [string],
+>     "date" : [string],
+> }
+
+:octocat:
+## /api/dishes/new
+
+*body required*
+
+> {
+>
+>     "dish_name" :  [string],
+>     "eaches" : [number],
+>     "image source" : [string],
+> }
+
+:octocat:
 ## /api/auth/login
 
 *body required*
@@ -39,8 +62,77 @@ https://mysterious-river-93270.herokuapp.com
 
 :octocat:
 
+## /api/potlucks
+
+*no body required*
+
+
+:octocat:
+## /api/dishes
+
+*no body required*
+
+
+:octocat:
+# PUT
+
+## /api/potlucks/update/:id
+
+  *not all arguments are required, only those you wish to update*
+> {
+>
+>     "potluck_name" :  [string],
+>     "location" : [string],
+>     "date" : [string]
+> }
+
+
+:octocat:
+
+## /api/users/update/:id
+
+  *not all arguments are required, only those you wish to update*
+> {
+>
+>     "username" :  [string],
+>     "password" : [string],
+>     "name" : [string],
+>     "email" : [string]
+> }
+
+## /api/dishes/update/:id
+
+  *not all arguments are required, only those you wish to update*
+> {
+>
+>     "dish_name" :  [string],
+>     "eaches" : [number],
+>     "image source" : [string]
+> }
+
+
+:octocat:
+# DELETE
+
+## /api/users/delete/:id
+
+  *no body required*
+
+:octocat:
+
+ ## /api/potlucks/delete/:id
+
+  *no body required*
+
+:octocat:
 
 ## /api/auth/logout
+
+*no body required*
+
+:octocat:
+
+## /api/dishes/delete/:id
 
 *no body required*
 
@@ -50,10 +142,5 @@ https://mysterious-river-93270.herokuapp.com
 :boom: :boom: :boom:
 
 TODO:
- * PUT update user information
- * DELETE update user information
  * POST Food tables { name: '', pictureSrc: '' }
  * PUT Food tables { name: '', pictureSrc: '' }
- * POST event {attending: [array], foods: [array], date: [date], location: [string] }
- * DELETE event [id]
- * PUT update event {attending: [array], foods: [array], date: [date], location: [string] }

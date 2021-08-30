@@ -10,7 +10,7 @@ const checkUserData = async ( req, res, next ) => {
   try {
     const users = await Users.find();
     if ( !users || users.length === 0 ) {
-      res.json({message: 'no users in database', users});
+      next({message: 'no users in database'});
     } else {
       req.body = users;
       next();
@@ -55,6 +55,14 @@ const checkSearchUsername = async (req, res, next) => {
         }
         next();
         break;
+      case 'dish':
+        req.body = await Users.findBy({dish: req.body.dish});
+        if (req.body.length === 0) {
+          res.status(404)
+              .json({message: 'user not found - dish is case sensivite'});
+        }
+        next();
+        break;
       default:
         res.status(404)
             .json({message: 'user not found - thing is case sensivite'});
@@ -64,7 +72,14 @@ const checkSearchUsername = async (req, res, next) => {
   }
 };
 
-
+const checkId = async (req, res, next) => {
+  const user = await Users.findById(req.params.id);
+  if (!user) {
+    res.status(404).json({message: 'user not found'});
+  } else {
+    next();
+  }
+};
 //   if (username) {
 //     const user = await Users.findBy({username: req.body.username});
 //     if (!user) {
@@ -81,4 +96,5 @@ const checkSearchUsername = async (req, res, next) => {
 module.exports = {
   checkUserData,
   checkSearchUsername,
+  checkId,
 };

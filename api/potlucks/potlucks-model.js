@@ -1,5 +1,5 @@
 const db = require('../../data/db-configure');
-const subj = 'users';
+const subj = 'potlucks';
 
 /** selects allsubj
 * @return {array} users
@@ -25,31 +25,31 @@ function findBy(search) {
  */
 function findById(id) {
   return db(subj)
-      .where('id', id)
+      .where('potluck_id', id)
       .first();
 } // is this redundant?
 
 /**
  * creates a new user,
  * if no role is given they will be added as guest
- * @param {*} user
+ * @param {*} potluck
  * @return {object} user
  */
-async function add(user) {
-  const [newUser] = await db(subj)
-      .insert(user);
-  return await findById(newUser);
+async function add(potluck) {
+  const [newPotluck] = await db(subj)
+      .insert(potluck);
+  return await findById(newPotluck);
 }
 
 /**
  *  finds user to update and
  * replaces old information with new
  * @param {*} id
- * @param {*} account
+ * @param {*} potluck
  * @return {*} updated user
  */
-const updateById = async (id, account) => {
-  await db(subj).where('id', id).update(account);
+const updateById = async (id, potluck) => {
+  await db(subj).where('potluck_id', id).update(potluck);
   return findById(id);
 };
 
@@ -59,7 +59,7 @@ const updateById = async (id, account) => {
  * @return {*} deleted user
  */
 const deleteById = async (id) => {
-  await db(subj).where('id', id).del();
+  await db(subj).where('potluck_id', id).del();
   return findById(id);
 };
 

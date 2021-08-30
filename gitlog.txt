@@ -1,3 +1,222 @@
+commit 820ab928c51036aca18b712c2ecbfab39523e700
+Author: Rocky Fierro <39335873+rockyFierro@users.noreply.github.com>
+Date:   Sun Aug 29 13:28:05 2021 -0700
+
+    :construction: potluck endpoints
+    
+    adding a potluck to the db is available
+
+commit 4d61fb58b39d87680a763c92d66624cbcfc58336
+Author: Rocky Fierro <39335873+rockyFierro@users.noreply.github.com>
+Date:   Sun Aug 29 10:46:42 2021 -0700
+
+    :building_construction: new endpoints
+    
+    GET potlucks is now available.
+
+commit 3ca26251e02eedabdaf8f799e1010a5e4a891e88
+Author: Rocky Fierro <39335873+rockyFierro@users.noreply.github.com>
+Date:   Sun Aug 29 10:18:17 2021 -0700
+
+    :goal_net: minor adjustments to error read out
+    
+    alerts changed for readability
+
+commit 1a65bec85d454908490ad38f95aa8028e8a6b5c4
+Author: Rocky Fierro <39335873+rockyFierro@users.noreply.github.com>
+Date:   Fri Aug 27 13:19:44 2021 -0700
+
+    :card_file_box: bughunt
+    
+    error returning two responses in the same code. solution: next(obj) > req.body
+
+commit ac20e0947ce41f85251edb3a30073ea30b1df4ea
+Author: Rocky Fierro <39335873+rockyFierro@users.noreply.github.com>
+Date:   Fri Aug 27 12:58:31 2021 -0700
+
+    :memo: EDIT DELETE added
+    
+    instructions on using edit and delete have been added
+
+commit f732c5437373b803b0646ff3a15802c80034a2c6
+Author: Rocky Fierro <39335873+rockyFierro@users.noreply.github.com>
+Date:   Fri Aug 27 12:47:55 2021 -0700
+
+    :passport_control: jwt polished
+    
+    added new ways to get rejected.
+
+commit 53f07cc7dccc8e75ff427dd5035b144b72bc27da
+Author: Rocky Fierro <39335873+rockyFierro@users.noreply.github.com>
+Date:   Fri Aug 27 00:41:15 2021 -0700
+
+    :card_file_box: new endpoint /edit/:id
+    
+    new data coming back from login for front end state management
+
+commit 7a2416fda40d318e3e08c445b9fbd5ef734be50d
+Author: Rocky Fierro <39335873+rockyFierro@users.noreply.github.com>
+Date:   Thu Aug 26 14:15:47 2021 -0700
+
+    :card_file_box: added seeds for multiple new tables
+    
+    potlucks, dishes and users are all pre-populated tables.
+
+commit 74a5798b75085c1676473cc9f4414bbbc3d95c2a
+Author: Rocky Fierro <39335873+rockyFierro@users.noreply.github.com>
+Date:   Thu Aug 26 00:28:36 2021 -0700
+
+    :sparkles: tables
+    
+    new food table coming, new event table coming
+
+commit de773b2d9c9148f2599d0a981aea9605973c9d82
+Author: Rocky Fierro <39335873+rockyFierro@users.noreply.github.com>
+Date:   Thu Aug 26 00:16:12 2021 -0700
+
+    :alien: whew
+    
+    jwt token checked, working as instructed
+
+commit e490ddc81c0cb0700b1fc0ead80e3fbcb98e9504
+Author: Rocky Fierro <39335873+rockyFierro@users.noreply.github.com>
+Date:   Wed Aug 25 23:05:57 2021 -0700
+
+    :wastebasket: jwt
+    
+    expires
+
+commit 90d4e109442249a861f171cbaa0ad56d85e9084c
+Author: Rocky Fierro <39335873+rockyFierro@users.noreply.github.com>
+Date:   Wed Aug 25 22:55:53 2021 -0700
+
+    :lock: same
+    
+    same
+
+commit 5ee95a34e7a836e4c5318db8ae766be1a73ecaa2
+Author: Rocky Fierro <39335873+rockyFierro@users.noreply.github.com>
+Date:   Wed Aug 25 22:46:01 2021 -0700
+
+    :lock: user init
+    
+    jwt
+
+commit 001cf89ea5cdfb1eba6a8959405dee1915f43fb9
+Merge: c57f566 b096423
+Author: Rocky Fierro <39335873+rockyFierro@users.noreply.github.com>
+Date:   Wed Aug 25 22:31:23 2021 -0700
+
+    Merge branch 'main' of https://github.com/Build-Week-Potluck-Plannerr/back-end
+
+commit c57f566f09aefc71fa29ffe6b7911b43eac09758
+Author: Rocky Fierro <39335873+rockyFierro@users.noreply.github.com>
+Date:   Wed Aug 25 22:25:40 2021 -0700
+
+    :lock: jwt
+    
+    added token authorization
+
+commit b096423562523c368c28a8146040be9ea83a379e
+Author: Rocky Fierro <39335873+rockyFierro@users.noreply.github.com>
+Date:   Wed Aug 25 20:35:44 2021 -0700
+
+    Update README.md
+
+commit 619ea221623fa1afe38992dec742cfc8b9256ca0
+Author: Rocky Fierro <39335873+rockyFierro@users.noreply.github.com>
+Date:   Wed Aug 25 20:35:21 2021 -0700
+
+    Update README.md
+
+commit a7f67de9836a5229681b6c834b121d70296a8548
+Author: Rocky Fierro <39335873+rockyFierro@users.noreply.github.com>
+Date:   Wed Aug 25 20:27:55 2021 -0700
+
+    :memo: readme
+    
+    updates
+
+commit 92c98576918a86a46d254911a72439788349a2ae
+Merge: 8d11106 738b7e6
+Author: Rocky Fierro <39335873+rockyFierro@users.noreply.github.com>
+Date:   Wed Aug 25 20:20:25 2021 -0700
+
+    Merge branch 'main' of https://github.com/Build-Week-Potluck-Plannerr/back-end
+
+commit 8d111067dbc3eef5a8fbcce1ff1fb2d601585068
+Author: Rocky Fierro <39335873+rockyFierro@users.noreply.github.com>
+Date:   Wed Aug 25 20:20:13 2021 -0700
+
+    :memo: readme
+    
+    some endpoints added (no jwt needed, available on request)
+
+commit 738b7e67c467c05476ad47ca13688cd89df65465
+Merge: 64f388a ffd8b88
+Author: Rocky Fierro <39335873+rockyFierro@users.noreply.github.com>
+Date:   Wed Aug 25 19:23:04 2021 -0700
+
+    Merge pull request #1 from Build-Week-Potluck-Plannerr/endpoints
+    
+    Endpoints
+
+commit ffd8b88dab0ce90b591a52be836674f375bd7425
+Author: Rocky Fierro <39335873+rockyFierro@users.noreply.github.com>
+Date:   Wed Aug 25 19:17:05 2021 -0700
+
+    :card_file_box: heroku
+    
+    deploying mvp to heroku
+
+commit 83cb54695106415304dd8dedc49f5506fbf69352
+Author: Rocky Fierro <39335873+rockyFierro@users.noreply.github.com>
+Date:   Wed Aug 25 13:36:35 2021 -0700
+
+    :construction: endpoints /auth/login /auth/logout
+    
+    working
+
+commit 70b9e66c2546bedbcde963049bda0a6c34a55680
+Author: Rocky Fierro <39335873+rockyFierro@users.noreply.github.com>
+Date:   Tue Aug 24 21:38:46 2021 -0700
+
+    :recycle: adjusted authModel
+    
+    adjusted confusing code from authModel > authMiddlware, the former is empty stub as of this change.
+
+commit cc64e9e6ab4a377ab18f220b088e7b978e691fe6
+Author: Rocky Fierro <39335873+rockyFierro@users.noreply.github.com>
+Date:   Tue Aug 24 01:19:16 2021 -0700
+
+    :boom: TODO
+    
+    wip /api/auth/login + middleware
+
+commit d107c2520406fcf8b08512c87ee2c12fe8d8ef2d
+Author: Rocky Fierro <39335873+rockyFierro@users.noreply.github.com>
+Date:   Tue Aug 24 00:54:12 2021 -0700
+
+    :construction: authRouter
+    
+    adds a new user, edge cases return useful errors
+
+commit 516a2d15d6de98a59a718113e92b2aaf450f147c
+Author: Rocky Fierro <39335873+rockyFierro@users.noreply.github.com>
+Date:   Mon Aug 23 23:09:09 2021 -0700
+
+    :white_check_mark: yup validation
+    
+    adding yup validation to middleware
+
+commit 0260820360e308dfe0b54e196391a971348848fe
+Author: Rocky Fierro <39335873+rockyFierro@users.noreply.github.com>
+Date:   Mon Aug 23 17:20:59 2021 -0700
+
+    :construction: authRouter
+    
+    endpoints are wired, setting up functionality.
+
 commit bf9349a23a52fcdefec9951e514d36d80b9bd1d5
 Author: Rocky Fierro <39335873+rockyFierro@users.noreply.github.com>
 Date:   Mon Aug 23 16:53:41 2021 -0700

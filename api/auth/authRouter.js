@@ -6,7 +6,6 @@ const {userSchemaRegister,
 const router = express.Router(); // eslint-disable-line
 const bcrypt = require('bcryptjs');
 const Users = require('../users/usersModel');
-const {createToken} = require('../createToken');
 
 router.post('/register',
     validatePayload(userSchemaRegister),
