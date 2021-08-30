@@ -39,8 +39,14 @@ router.put('/update/:id', checkPotluckId, async (req, res)=>{
   }
 });
 
-router.delete('', checkPotluckId, (req, res)=>{
-  console.log('wired');
-});
+router.delete('/delete/:id', checkPotluckId,
+    async (req, res)=>{
+      try {
+        const deleted = await Potlucks.deleteById(req.params.id);
+        res.json({deleted, message: 'potluck event deleted'});
+      } catch (err) {
+        res.status(500).json(err);
+      }
+    });
 
 module.exports = router;
