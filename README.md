@@ -142,5 +142,4 @@ https://mysterious-river-93270.herokuapp.com
 :boom: :boom: :boom:
 
 TODO:
- * POST Food tables { name: '', pictureSrc: '' }
- * PUT Food tables { name: '', pictureSrc: '' }
+ %%%%% some endpoints do not yet have test code, all have been manually tested for errors, please submit any edge  cases found by creating a new issue &&&&&&&&&
