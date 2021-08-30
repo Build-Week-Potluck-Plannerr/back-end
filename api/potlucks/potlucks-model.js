@@ -45,7 +45,7 @@ async function add(potluck) {
  *  finds user to update and
  * replaces old information with new
  * @param {*} id
- * @param {*} account
+ * @param {*} potluck
  * @return {*} updated user
  */
 const updateById = async (id, potluck) => {

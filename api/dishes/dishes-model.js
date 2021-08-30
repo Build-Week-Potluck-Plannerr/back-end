@@ -1,64 +1,66 @@
 const db = require('../../data/db-configure');
-const subj = 'dishes'
-/** selects all users
- * @return {array} users
-*/
+const subj = 'dishes';
+
+/**
+ * selects all dishes
+ *
+ * @return {array}subj*/
 function find() {
-  return db('users');
+  return db(subj);
 }
 
 /**
- * selects users by passing an attribute such as username, dish or name
+ * selectssubjby passing an attribute such as username, dish or name
  *
  * @param {*} search
- * @return {object} user
+ * @return {object} dishes
  */
 function findBy(search) {
-  return db('users').where(search);
+  return db(subj).where(search);
 }
 
 /**
- * selects a user based on their id
+ * selects a dish based on their id
  * @param {number} id
  * @return {object} user
  */
 function findById(id) {
-  return db('users')
-      .where('id', id)
+  return db(subj)
+      .where('dishes_id', id)
       .first();
 } // is this redundant?
 
 /**
- * creates a new user,
+ * creates a new dish,
  * if no role is given they will be added as guest
  * @param {*} user
  * @return {object} user
  */
 async function add(user) {
-  const [newUser] = await db('users')
+  const [newUser] = await db(subj)
       .insert(user);
   return await findById(newUser);
 }
 
 /**
- *  finds user to update and
+ *  finds dish to update and
  * replaces old information with new
  * @param {*} id
  * @param {*} account
  * @return {*} updated user
  */
 const updateById = async (id, account) => {
-  await db('users').where('id', id).update(account);
+  await db(subj).where('dishes_id', id).update(account);
   return findById(id);
 };
 
 /**
- * takes id and deletes corrosponding user account
+ * takes id and deletes corrosponding dish
  * @param {*} id
  * @return {*} deleted user
  */
 const deleteById = async (id) => {
-  await db('users').where('id', id).del();
+  await db(subj).where('dishes_id', id).del();
   return findById(id);
 };
 
